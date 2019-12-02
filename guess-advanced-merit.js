@@ -21,8 +21,8 @@ while (again == true && guess != "q"){
 		else alert("invalid guess. try again");
 	} 
 	if (guess==answer){
-	gameStats();
-	again = newGame();
+		gameStats();
+		again = newGame();
 	}
 	else alert("You quit");
 }
