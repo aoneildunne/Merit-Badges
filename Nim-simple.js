@@ -6,7 +6,7 @@ count = 0
  */ 
  count = 0;
  turn = 0;
- winner = "null";
+ winner = null;
  /* Main Code 
   * loop while count <21
   * if count < 21 call cpuTurn, adding to count and alerting count. Set winner as player. 
@@ -17,9 +17,12 @@ count = 0
   while(count < 21){
 	  if(count < 21){
 		  cpuTurn();
-		  
-	  }
+		  }
+    if(count < 21){
+      playerTurn();
+    }
   }
+  alert("winner is " +winner+ " ");
   
 /* playerTurn
  * set winner as CPU
@@ -27,9 +30,12 @@ count = 0
  * @param none
  * @return turn (integer)
  */
-function userturn(){
-	winner = cpu;
-	parseint
+function playerTurn(){
+	winner = "cpu";
+	turn = parseInt(prompt("how many do you count?"));
+  count+=turn;
+  alert("count is now " +count+ " .");
+  return turn;
 }
 /* cpuTurn
  * set winner as player
@@ -38,8 +44,9 @@ function userturn(){
  * return turn
  */
  function cpuTurn(){
-	 winner = player
+	 winner = "player";
 	 turn = Math.floor(Math.random()*3)+1;
-	 alert(turn);
-	 return turn;
+   count+=turn;
+	 alert("computer counts " +turn+ " and count is now " +count+ " .");
+   return turn;
  }
